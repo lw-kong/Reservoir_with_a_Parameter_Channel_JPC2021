@@ -1,4 +1,5 @@
 function rmse = func_Lorenz_train(hyperpara_set,n,bo)
+% similar to Lorenz_IM_STP_10_train
 
 dim = 3;
 
