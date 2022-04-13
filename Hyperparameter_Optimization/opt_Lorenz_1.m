@@ -1,3 +1,4 @@
+% requires 'Optimization Toolbox' and 'Global Optimization Toolbox'
 
 %% config
 addpath '..\Functions'
@@ -11,8 +12,8 @@ func = @(x) (func_train_repeat(x,n,bo,repeat_num));
 % optimizatin config
 % 1~4: eig_rho W_in_a tp_w tp_bias
 % 5~7: a beta k
-lb = [0 0  0 -3    0 10^-10 1]; % upper bounds
-ub = [3 3  3  3    1 10^-3 n]; % lower bounds
+lb = [0 0  0 -3    0 10^-10 1]; % lower bounds
+ub = [3 3  3  3    1 10^-3 n]; % upper bounds
 options = optimoptions('surrogateopt','MaxFunctionEvaluations',iter_max,'PlotFcn','surrogateoptplot');
 
 filename = ['opt_Lorenz_IM_1_' datestr(now,30) '_' num2str(randi(999)) '.mat'];
